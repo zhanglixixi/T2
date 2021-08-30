@@ -1,0 +1,10 @@
+name: happy
+channels:
+  - defaults
+  - conda-forge
+  - bioconda
+dependencies:
+  - python
+  - hap.py
+  - rtg-tools
+  - pip
