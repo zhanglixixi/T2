@@ -20,7 +20,7 @@ sys.path.append('../../')
 sys.path.insert(0, os.path.abspath('../../transcript_select/'))
 
 import argparse
-import pandas as pd
+
 from transcript_select import get_LRG_GRCh38_txs
 
 
