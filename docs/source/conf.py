@@ -17,7 +17,9 @@ import sys
 sys.path.append('../../')
 # sys.path.append('../../transcript_select')
 
-sys.path.insert(0, os.path.abspath('../../transcript_select'))
+sys.path.insert(0, os.path.abspath('../../transcript_select/'))
+
+from transcript import get_LRG_GRCh38_txs
 
 
 # -- Project information -----------------------------------------------------
