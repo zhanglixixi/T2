@@ -21,7 +21,7 @@ sys.path.insert(0, os.path.abspath('../../transcript_select/'))
 
 # import argparse
 # import pandas
-# from transcript_select import get_LRG_GRCh38_txs
+# from transcript_select import select_transcript
 
 
 # -- Project information -----------------------------------------------------
