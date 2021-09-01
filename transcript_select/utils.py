@@ -17,6 +17,9 @@ def content_line(fin):
 
 
 def chromosome_list(fix_chr=False):
+    '''
+    CHROMOSOME LIST
+    '''
     chrs = ['chr{c}'.format(c=i+1) for i in range(0, 22)] if fix_chr else ['{c}'.format(c=i+1) for i in range(0, 22)]
     chrs += ['chrX', 'chrY'] if fix_chr else ['X', 'Y']
     return chrs
