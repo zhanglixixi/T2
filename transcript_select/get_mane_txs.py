@@ -19,6 +19,15 @@ def get_args():
 
 
 def get_mane_transcripts(manebed):
+    '''
+    Get transcrips from MANE\n
+    MANE : Matched Annotation from NCBI and EMBL-EBI\n
+    MANE was based on hg38\n
+    MANE select: 
+    One high-quality representative transcript per protein-coding
+    gene that is well-supported by experimental data and represents
+    the biology of the gene,
+    '''
     mane_entries = pd.read_csv(manebed, sep='\t', header=None, usecols=[18, 21], names=['gene', 'tx'])
     mane_entries['tx'] = mane_entries['tx'].apply(lambda x: x.split('.')[0])
     gene_txs0 = mane_entries.groupby(by='gene')['tx'].apply(list).reset_index(name='txs')

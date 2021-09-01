@@ -19,6 +19,7 @@ def get_args():
 
 
 def get_clinvar_transcripts(variant_summary_file):
+    "To get transcripts from ClinVar."
     var_info = pd.read_csv(
         variant_summary_file, sep='\t', header=0, dtype={'Chromosome': str},  # nrows=10000,
         usecols=['Type', 'Name', 'GeneID', 'GeneSymbol', 'Assembly', 'Chromosome', 'ReviewStatus', 'NumberSubmitters']

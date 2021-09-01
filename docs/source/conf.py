@@ -14,17 +14,10 @@
 #
 import os
 import sys
-# sys.path.append('../../')
-# sys.path.append('../../transcript_select')
-
-sys.path.insert(0, os.path.abspath('../../transcript_select/'))
+#sys.path.append('../../')
 sys.path.insert(0, os.path.abspath('../../'))
 sys.path.insert(0, os.path.abspath('../'))
-
-# import argparse
-# import pandas
-# from transcript_select import select_transcript
-
+sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 

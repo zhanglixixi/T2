@@ -28,7 +28,7 @@ SNPID
    :maxdepth: 2
 
    Tools/snpid/readme
-   Tools/snpid/modules
+   Tools/snpid/variants-dist
 
 
 

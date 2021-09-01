@@ -14,6 +14,10 @@ def get_args():
     return parser.parse_args()
 
 def get_LRG_transcripts(LRGtxt):
+    '''
+    To get transcript from LRG database.\n 
+    recommended by ACMG
+    '''
     LRG_entries = pd.read_csv(LRGtxt, sep='\t', header=1, usecols=[1,4], names=['gene','tx'])
     LRG_entries['tx'] = LRG_entries['tx'].apply(lambda x: x.split('.')[0])
     gene_txs0 = LRG_entries.groupby(by='gene')['tx'].apply(list).reset_index(name='txs')

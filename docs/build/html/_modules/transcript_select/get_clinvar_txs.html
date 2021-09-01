@@ -95,7 +95,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/readme.html">SNP ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/readme.html#id2">场景</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/modules.html">snpid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/variants-dist.html">variants-dist module</a></li>
 </ul>
 
             
@@ -185,6 +185,7 @@
 
 
 <div class="viewcode-block" id="get_clinvar_transcripts"><a class="viewcode-back" href="../../Tools/transcript/transcript_select.html#transcript_select.get_clinvar_txs.get_clinvar_transcripts">[文档]</a><span class="k">def</span> <span class="nf">get_clinvar_transcripts</span><span class="p">(</span><span class="n">variant_summary_file</span><span class="p">):</span>
+    <span class="s2">&quot;To get transcripts from ClinVar.&quot;</span>
     <span class="n">var_info</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
         <span class="n">variant_summary_file</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Chromosome&#39;</span><span class="p">:</span> <span class="nb">str</span><span class="p">},</span>  <span class="c1"># nrows=10000,</span>
         <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Type&#39;</span><span class="p">,</span> <span class="s1">&#39;Name&#39;</span><span class="p">,</span> <span class="s1">&#39;GeneID&#39;</span><span class="p">,</span> <span class="s1">&#39;GeneSymbol&#39;</span><span class="p">,</span> <span class="s1">&#39;Assembly&#39;</span><span class="p">,</span> <span class="s1">&#39;Chromosome&#39;</span><span class="p">,</span> <span class="s1">&#39;ReviewStatus&#39;</span><span class="p">,</span> <span class="s1">&#39;NumberSubmitters&#39;</span><span class="p">]</span>

@@ -95,7 +95,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/readme.html">SNP ID</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/readme.html#id2">场景</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/modules.html">snpid</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../Tools/snpid/variants-dist.html">variants-dist module</a></li>
 </ul>
 
             
@@ -185,6 +185,15 @@
 
 
 <div class="viewcode-block" id="get_mane_transcripts"><a class="viewcode-back" href="../../Tools/transcript/transcript_select.html#transcript_select.get_mane_txs.get_mane_transcripts">[文档]</a><span class="k">def</span> <span class="nf">get_mane_transcripts</span><span class="p">(</span><span class="n">manebed</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">    Get transcrips from MANE\n</span>
+<span class="sd">    MANE : Matched Annotation from NCBI and EMBL-EBI\n</span>
+<span class="sd">    MANE was based on hg38\n</span>
+<span class="sd">    MANE select: </span>
+<span class="sd">    One high-quality representative transcript per protein-coding</span>
+<span class="sd">    gene that is well-supported by experimental data and represents</span>
+<span class="sd">    the biology of the gene,</span>
+<span class="sd">    &#39;&#39;&#39;</span>
     <span class="n">mane_entries</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">manebed</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">usecols</span><span class="o">=</span><span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">],</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;gene&#39;</span><span class="p">,</span> <span class="s1">&#39;tx&#39;</span><span class="p">])</span>
     <span class="n">mane_entries</span><span class="p">[</span><span class="s1">&#39;tx&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mane_entries</span><span class="p">[</span><span class="s1">&#39;tx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">])</span>
     <span class="n">gene_txs0</span> <span class="o">=</span> <span class="n">mane_entries</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s1">&#39;gene&#39;</span><span class="p">)[</span><span class="s1">&#39;tx&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="nb">list</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s1">&#39;txs&#39;</span><span class="p">)</span>
